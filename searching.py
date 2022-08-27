@@ -22,7 +22,7 @@ class Node():
             if not self.left:
                 return str(val) + "不存在"
             return self.left.search(val)
-        elif:
+        elif val > self.data:
             if not self.right:
                 return str(val) + "不存在"
             return self.right.search(val)
