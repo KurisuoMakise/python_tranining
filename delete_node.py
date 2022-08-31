@@ -23,6 +23,8 @@ class Node():
         print(self.data)
         if self.right:
             self.right.inorder()
+
+
 class Delete_Node():
     def deleteNode(self,root,key):
         if root is None:
@@ -39,11 +41,13 @@ class Delete_Node():
         if root.right is None:
             new_root = root.left
             return new_root
+
         succ = self.max_node(root.left)
         tmp = Node(succ.data)
         tmp.left = self.left_node(root.left)
         tmp.right = root.right
         return tmp
+
     def left_node(self,node):
         if node.right is None:
             new_root = node.left
@@ -63,7 +67,7 @@ for d in datas:
     tree.insert(d)
 tree.inorder()
 del_data = 5
-print("刪除 %d 資料以後"%del_data)
+print("刪除 %d 資料後"% del_data)
 delete_obj = Delete_Node()
 result = delete_obj.deleteNode(tree,del_data)
 result.inorder()
